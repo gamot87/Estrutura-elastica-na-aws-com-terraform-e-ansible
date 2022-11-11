@@ -14,3 +14,5 @@ Cria-se um loadbalancer target group na vpc em questão com suas devidas cofigur
 Cria-se o recurso aws_lb_listener (entrada do load balancer) do tipo foward (passa para frente, no caso o lb_target_group)
 Cria-se Um auto scaling group com as configurações de ami, número de máquinas minimas,maximas e desejadas.
 Adicionamos os códigos criados no arquivo ansible.sh no aws_launch_template no parametro user_data , onde eles serão executados na primeira vez que a máquina entrar em funcionamento, o mesmo instala as dependências , aplicação e coloca em funcionamento a api-django.
+
+# Após a criação de toda a infra-estrutura basta ir no loadbalancer e copiar o dns dele e incluir :8000 (porta da aplicação), colar no browser e verificar o funcionamento . 
